@@ -85,6 +85,46 @@ as global immune desertification that **bulk RNA cannot resolve**.
 
 ---
 
+## A5 — Independent replication: **THE EFFECT DOES NOT REPLICATE**
+
+Replication cohort: the **non-TCGA (ICGC) donors carrying the same ShatterSeek chromothripsis
+calls**, with completely independent expression data (PCAWG tophat/STAR FPKM-UQ, open ICGC-25K
+bucket). Exposure (chromothripsis), WGD (ploidy > 2.5) and purity come from the *same* source
+table as the discovery cohort, so only the RNA differs. n = 421 (99 WGD+, 118 chromothripsis-high),
+8 histologies.
+
+| Cohort | WGD b [95% CI] | p |
+|---|--:|--:|
+| TCGA discovery (n=689) | −0.339 [−0.471, −0.206] | 6.6 × 10⁻⁷ |
+| **PCAWG non-TCGA (n=421)** | **−0.151 [−0.367, +0.065]** | **0.17** |
+| PCAWG solid tumours only (n=260) | **−0.069 [−0.304, +0.166]** | **0.56** |
+
+The direction is preserved but the magnitude collapses and significance is lost. Three
+explanations were tested and **all were ruled out**:
+
+1. **Tumour-type mix?** No. Restricting the *TCGA* cohort to the same histologies present in the
+   replication (Liver-HCC, Ovary-AdenoCA, Kidney-RCC) gives an even **stronger** effect
+   (b = −0.520 [−0.841, −0.198], p = 0.0017, n = 134). The same cancer types show a large effect in
+   TCGA and none in PCAWG.
+2. **Lymphoid contamination?** No. 38% of the replication cohort is lymphoid, where cytolytic
+   score is not comparable — but excluding it makes the estimate *smaller* (−0.069), not larger.
+3. **Bad replication data?** No. Positive controls reproduce known immune biology at essentially
+   TCGA strength: APM~cytolytic +0.58 (TCGA +0.62), sensor~cytolytic +0.43 (TCGA +0.45),
+   purity~cytolytic negative in both. The expression data and scores behave correctly.
+
+Power is adequate: with n = 260 solid tumours the standard error (~0.12) would detect an effect of
+the TCGA magnitude (−0.34 to −0.52) at p < 0.01. Its absence is informative, not a null from
+under-sampling.
+
+**Conclusion: the WGD → immune-cold association is cohort-dependent.** It is robust *within* TCGA
+(and survives TMB adjustment there) but does not generalise to independent ICGC cohorts processed
+through a different RNA pipeline. The most likely reading is a TCGA-specific technical or
+selection effect, or a sensitivity of the association to expression normalisation that
+within-histology z-scoring does not remove. **The A1 dissociation should not be presented as an
+established biological result on this evidence.**
+
+---
+
 ## Honest limitations
 
 - Cross-sectional TCGA; associations are causal *models*, not experiments.

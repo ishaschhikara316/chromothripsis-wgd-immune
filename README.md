@@ -1,6 +1,8 @@
 # chromothripsis-wgd-immune
 
-**Whole-genome doubling — not the chromothripsis it travels with — drives the immune-cold phenotype of complex-genome tumours.**
+**Within TCGA, whole-genome doubling — not the chromothripsis it travels with — tracks the immune-cold phenotype of complex-genome tumours. But the association DOES NOT REPLICATE in independent non-TCGA cohorts.**
+
+> ⚠️ **Replication failed (A5).** The WGD effect is −0.339 (p=6.6e-7) in TCGA but −0.069 (p=0.56) in non-TCGA PCAWG solid tumours, and this is *not* explained by tumour-type mix, lymphoid contamination, data quality or power (all tested — see `results/RESULTS_CORE.md`). The finding is cohort-dependent and should not be presented as established biology.
 
 A computational, public-data, CPU-only causal-mediation project. Built on **Isidro Cortés-Ciriano's** own published chromothripsis calls (PCAWG ShatterSeek, Cortés-Ciriano et al. *Nat Genet* 2020, PMID 32025003) — his ERC programme *BrokenChromosomes* studies complex rearrangements → immune evasion.
 
@@ -23,7 +25,7 @@ See `results/RESULTS_CORE.md` for full tables and honest limitations.
 - **A2b — Residual hunt.** Chase the unexplained direct effect. ✅ done (no clean novel mediator)
 - **A3 — TMB deconfounding.** ✅ done (dissociation survives and sharpens)
 - **A4 — Figures.** ✅ done
-- **A5 — Replication.** PCAWG-direct RNA / ICGC. ⬜ not yet done
+- **A5 — Replication.** PCAWG-direct RNA / ICGC. ✅ done — **does not replicate**
 
 ## Data (public, CPU-only)
 
@@ -42,4 +44,4 @@ python src/a4_figures.py          # A4 figures
 
 The unresolved ~71% direct effect is precisely a **single-cell / spatial** question — the methodology of the group whose chromothripsis calls this is built on. That is the concrete collaboration hook, rather than a generic ask.
 
-*Manuscript in preparation. Not submitted.*
+*Status: the headline does not replicate. Not suitable for submission as a positive finding; see RESULTS_CORE.md for the full replication analysis.*
